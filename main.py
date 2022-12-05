@@ -7,7 +7,14 @@ def main():
             book_text = file.read()
             return book_text
 
-    text_to_print = open_and_read(book_path)
-    print(text_to_print)        
+    text = open_and_read(book_path)
+    
+    def count_words(text_to_count):
+        words = text_to_count.split()
+        return len(words)
+
+    count = count_words(text)
+    print(count)
+           
 
 main()

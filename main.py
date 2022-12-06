@@ -7,14 +7,23 @@ def main():
             book_text = file.read()
             return book_text
 
-    text = open_and_read(book_path)
-    
-    def count_words(text_to_count):
-        words = text_to_count.split()
-        return len(words)
 
-    count = count_words(text)
-    print(count)
+    def character_count(text):
+        
+        characters_dictionary = {}
+        letters = list(text)
+
+        for letter in letters:
+            if letter in characters_dictionary:
+                characters_dictionary[letter] += 1
+            else:
+                characters_dictionary[letter] = 1
+
+        return characters_dictionary 
            
+    text_to_count = open_and_read(book_path).lower()
+    
+    characters = character_count(text_to_count)
+    print(characters) 
 
 main()

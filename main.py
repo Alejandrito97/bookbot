@@ -23,8 +23,7 @@ def main():
 
         return characters_dictionary 
            
-    def dict_to_list(dict_to_convert):
-        
+    def dict_to_list(dict_to_convert):    
         new_list = []
         for key, val in dict_to_convert.items():
             if key.isalpha():
